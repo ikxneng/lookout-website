@@ -1,0 +1,192 @@
+.home-container {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100vw;
+  height: 85vh;
+  margin-top: 90px;
+  display: flexbox;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+.text-section {
+  flex: 1;
+  text-align: left;
+  position: relative;
+  margin-top: 50px;
+  padding-top: 1rem;
+  padding-bottom: 10rem;
+  padding-left: 4.5rem;
+  border-left: 2px solid #a80000;
+  height: 300px;
+}
+
+.slogan {
+  color: #a80000;
+  padding-bottom: 20px;
+}
+
+.text-section h1 {
+  padding-top: 10px;
+  padding-bottom: 20px;
+  font-size: 50px;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+.text-section p {
+  padding-bottom: 20px;
+  font-size: 21px;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+.view-gallery-btn {
+  padding: 1.35rem 1.2rem;
+  color: white;
+  background-color: #a80000;
+  border: 1px solid #a80000;
+  cursor: pointer;
+  font-size: 1.1rem;
+  font-weight: 500;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  text-transform: uppercase;
+  text-align: left;
+  transition: all 0.3s ease;
+}
+
+.view-gallery-btn:hover {
+  background-color: white;
+  color: #a80000;
+  border: 1px solid #a80000;
+}
+
+
+.home-image {
+  max-width: 100%;
+  width: 40%;
+  height: auto;
+  border-radius: 5px;
+  object-fit: cover;
+  align-items: flex-end;
+}
+
+.upcoming-event{
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.event-title{
+  color: #a80000;
+  font-size: 50px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.event-poster {
+  display: flex;
+  max-width: 100%;
+  width: 45%;
+  height: auto;
+  object-fit: cover;
+  justify-content: flex-start;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; 
+}
+
+.event-poster:hover {
+  transform: scale(1.05); 
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); 
+}
+
+
+.event-info{
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+.event-details {
+  display: flex;
+  flex-direction: column;
+  text-align:center;
+  margin-left: 110px;
+  margin-top: 50px;
+  border-left: 2px solid #a80000;
+  padding-left: 7.5rem;
+  height: 460px;
+}
+
+.event-name {
+  font-size: 50px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #a80000;
+}
+
+.event-location {
+  font-size: 15px;
+  margin-top: 10px;
+  color: #a80000;
+}
+
+.countdown-clock p{
+  font-size: 30px;
+  color: #a80000;
+}
+
+.ticket-button {
+  margin-top: 20px;
+  margin-left: 45px;
+  padding: 1rem 1.1rem;
+  color: white;
+  background-color: #a80000;
+  border: 1px solid #a80000;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 500;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  text-transform: uppercase;
+  text-align: center;
+  width: auto;
+  max-width: 180px;
+  transition: all 0.3s ease;
+}
+
+.ticket-button:hover {
+  background-color: white;
+  color: #a80000;
+  border: 1px solid #a80000;
+}
+
+.about-us{
+  background-color: black;
+  margin-top: 50px;
+  width: 100vw;
+
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.about-logo{
+  /* display: flex; */
+  max-width: 100%;
+  width: 45%;
+  height: auto;
+  object-fit: cover;
+}
+
+.about-us p{
+  color: white;
+  text-align: left;
+}
+
+@media (max-width: 768px) {
+  .home-image {
+    width: 80%; 
+  }
+}
