@@ -78,7 +78,7 @@
   width: 87%;
   height: auto;
   margin-top: 20px;
-  border: 1.5px solid grey;
+  /* border: 1.5px solid grey; */
   align-items: flex-start;
 }
 
@@ -232,7 +232,7 @@
   padding: 0.2rem 10rem;
   display: flex;
   flex-direction: column;
-  margin-right: 70px; /* Adjust the whole container to the right */
+  margin-right: 90px; /* Adjust the whole container to the right */
   margin-bottom: 50px;
   text-align: left;
   max-width: 300px;
@@ -244,7 +244,7 @@
 
 .chat-form h3{
   text-align: center;
-  margin-left: 50px;
+  margin-left: 60px;
   font-size: 40px;
   font-weight: 550;
   font-family: Georgia, "Times New Roman", Times, serif;
@@ -255,9 +255,9 @@
 .form-group-horizontal{
   display: flex;
   flex-direction: row;
-  width: 130%;
+  width: 138%;
   height: 100;
-  gap: 145px;
+  gap: 180px;
 
 }
 
@@ -279,16 +279,16 @@
   font-size: 16px;
   border: 1.5px solid black;
   border-radius: 1px;
-  width: 250%;
+  width: 260%;
 }
 
 #email{
-  width: 176%;
+  width: 190%;
   height: auto;
 }
 
 #message{
-  width: 181%;
+  width: 195%;
 }
 
 .chat-with-us{
@@ -302,9 +302,9 @@
 .chat-logo{
   display: flex;
   justify-content: flex-start;
-  margin-top: 100px;
+  margin-top: 120px;
   margin-bottom: 150px;
-  margin-left: 100px;
+  margin-left: 120px;
   max-width: 100%;
   width: 65%;
   height: auto;
@@ -321,8 +321,8 @@
   font-weight: 500;
   font-family: Georgia, "Times New Roman", Times, serif;
   text-transform: uppercase;
+  width: 198%;
   /* text-align: center; */
-  width: 185%;
   /* max-width: 200px; */
   transition: all 0.3s ease;
 }
