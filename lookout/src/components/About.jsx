@@ -1,5 +1,6 @@
 import React from "react";
 import "./About.css";
+import {motion} from "framer-motion"
 import { FaEnvelope, FaWhatsapp, FaPhoneAlt, FaInstagram } from "react-icons/fa";
 import whiteLogo from '../assets/White_PNG.png';
 import blackLogo from '../assets/Black_PNG.png';
@@ -68,86 +69,175 @@ const whyUsData = [
 const About = () => {
     return (
         <div className="about-us">
-            <h2 className="about-us-title">About Us</h2>
+            <motion.h2 
+            className="about-us-title"
+            whileInView={{opacity: 1, y: 0}}
+            initial={{opacity: 0, y: -50 }}
+            transition={{duration: 0.8, ease: "easeOut" }}
+            viewport={{once: true}}            
+            >
+            About Us
 
-            <div className="get-to-know-us">
+            </motion.h2>
 
-                <h2>Who Are We?</h2>
+            <motion.div 
+            className="get-to-know-us"
+            whileInView={{opacity: 1, x: 0}}
+            initial={{opacity: 0, x: -50}}
+            transition={{ duration: 0.8, delay: 0.2, ease: "easeOut"}}
+            viewport={{once: true}}
+            >
 
-                <p>
+                <motion.h2
+                whileInView={{ opacity: 1, x: 0 }}
+                initial={{ opacity: 0, x: -30 }}
+                transition={{ duration: 0.8, delay: 0.3 }}
+                viewport={{ once: true }}
+                >
+                Who Are We?
+                </motion.h2>
+
+                <motion.p
+                whileInView={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0, y: 30 }}
+                transition={{ duration: 0.8, delay: 0.4 }}
+                viewport={{ once: true }}
+                >
                     At <strong>The Lookout</strong>, we don’t just plan events—we curate unforgettable moments that leave lasting impressions. 
                     Whether it’s a high-energy club night pulsating with electrifying beats, an intimate Wine & Paint session under the Cape Town skyline, 
                     or an exclusive pop-up where trendsetters connect, every gathering is designed to inspire, engage, and elevate.
-                </p>
-                <p>
+                </motion.p>
+                <motion.p
+                whileInView={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0, y: 30 }}
+                transition={{ duration: 0.8, delay: 0.5 }}
+                viewport={{ once: true }}
+                >
                     With a deep passion for bringing people together, we blend cutting-edge event planning, strategic marketing, and innovative brand collaborations 
                     to craft immersive experiences. Our expertise in creating the perfect synergy between ambiance, music, and engagement ensures that each event 
                     feels unique, vibrant, and unforgettable.
-                </p>
-            </div>
+                </motion.p>
+            </motion.div>
 
-            <div className="why-us">
+            <motion.div 
+            className="why-us"
+            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, y: 50 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            viewport={{ once: true, amount: 0.3 }}        
+            >
                 <h2>Why Choose The Lookout?</h2>
                 <div className="why-us-cards">
                 {whyUsData.map((item, index) => (
-                        <div key={index} className="why-us-card">
+                        <motion.div 
+                        key={index} 
+                        className="why-us-card"
+                        whileInView={{ opacity: 1, y: 0 }}
+                        initial={{ opacity: 0, y: 30 }}
+                        transition={{ duration: 1.1, delay: index * 0.2 }}
+                        viewport={{ once: true, amount: 0.3 }}
+                        >
                             <img src={item.image} alt={item.title} className="card-image" />
                             <h3>{item.title}</h3>
                             <p>{item.description}</p>
-                        </div>
+                        </motion.div>
                     ))}
                 </div>
-            </div>
+            </motion.div>
 
-            <div className="meet-the-team">
+            <motion.div 
+            className="meet-the-team"
+            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, y: 50 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            viewport={{ once: true, amount: 0.3 }}
+            >
                 <h2>Meet The Team</h2>
                 <div className="team-cards">
                 {teamData.map((member, index) => (
-                    <div key={index} className="team-card">
+                    <motion.div 
+                    key={index}
+                    className="team-card"
+                    whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                    initial={{ opacity: 0, y: 30, scale: 0.9 }}
+                    transition={{ duration: 0.8, delay: index * 0.2 }}
+                    viewport={{ once: true, amount: 0.3 }}
+                    >
                         <img src={member.image} alt={member.name} className="team-image" />
                         <h3>{member.name}</h3>
                         <p className="position">{member.position}</p>
                         <p className="bio">{member.bio}</p>
                         <p><strong>Favorite Food:</strong> {member.favoriteFood}</p>
                         <p><strong>Weakness:</strong> {member.weakness}</p>
-                    </div>
+                    </motion.div>
                 ))}
             </div>
-        </div>
+        </motion.div>
 
-        <div className="call-to-action">
+        <motion.div 
+        className="call-to-action"
+        whileInView={{ opacity: 1, y: 0 }}
+        initial={{ opacity: 0, y: 50 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        viewport={{ once: true, amount: 0.3 }}
+        >
     <h2>Contact our friendly team.</h2>
     <p>
      <strong> Get in touch, and let’s bring your vision to life. </strong>
     </p>
 
-    <div className="contact-info">
-    <div className="contact-card">
+    <div className="contact-info"
+     >
+    <motion.div 
+    className="contact-card"
+    whileHover={{ scale: 1.05 }}
+    whileTap={{ scale: 0.95 }}
+    transition={{ duration: 0.3 }}
+    viewport={{ once: true, amount: 0.3 }}
+    >
         <FaEnvelope className="contact-icon" />
         <h3>Email Us</h3>
         <span>Speak to our friendly team.</span>
         <p>hello@thelookout.com</p>
-    </div>
-    <div className="contact-card">
+    </motion.div>
+    <motion.div
+    className="contact-card"
+    whileHover={{ scale: 1.05 }}
+    whileTap={{ scale: 0.95 }}
+    transition={{ duration: 0.3 }}
+    viewport={{ once: true, amount: 0.3 }}
+    >
         <FaWhatsapp className="contact-icon" />
         <h3>WhatsApp Us</h3>
         <span>We're here to help</span>
         <p>+27 76 123 4567</p>
-    </div>
-    <div className="contact-card">
+    </motion.div>
+    <motion.div 
+    className="contact-card"
+    whileHover={{ scale: 1.05 }}
+    whileTap={{ scale: 0.95 }}
+    transition={{ duration: 0.3 }}
+    viewport={{ once: true, amount: 0.3 }}
+    >
         <FaPhoneAlt className="contact-icon" />
         <h3>Call Us</h3>
         <span>Mon - Fri from 8am to 5pm.</span>
         <p>+27 21 987 6543</p>
-    </div>
-    <div className="contact-card">
+    </motion.div>
+    <motion.div 
+    className="contact-card"
+    whileHover={{ scale: 1.05 }}
+    whileTap={{ scale: 0.95 }}
+    transition={{ duration: 0.3 }}
+    viewport={{ once: true, amount: 0.3 }}
+    >
         <FaInstagram className="contact-icon" />
         <h3>Follow Us</h3>
         <span>Stay updated & tag us.</span>
         <p>@TheLookoutEvents</p>
-    </div>
+    </motion.div>
 </div>
-</div>
+</motion.div>
 </div>
     );
 }
