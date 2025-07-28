@@ -11,8 +11,6 @@
   width: 95vw;
   /* height: 100vh; */
   margin-top: 85px;
-  /* margin-left: 10px; */
-  /* display: flexbox; */
   /* justify-content: space-between; */
   align-items: center;
 }
@@ -112,6 +110,27 @@
   margin-bottom: 10px;
 
 }
+
+.swiper{
+  color: #a80000;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: #a80000 !important; 
+}
+
+
+.swiper-pagination-bullet {
+  background-color: #ff5733 !important; 
+  opacity: 0.7; 
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #ff4500 !important; 
+  opacity: 1;
+}
+
 
 .upcoming-event{
   margin-top: 20px;
@@ -381,5 +400,138 @@
 @media (max-width: 768px) {
   .home-image {
     width: 80%; 
+    height: auto;
+  }
+}
+
+
+@media (max-width: 480px) {
+  .home-image{
+    display: none;
+  }
+
+  .polaroid{
+    display: none;
+  }
+
+  .home-container{
+    width: 95vw;
+    padding: 0 10px;
+  }
+
+  .text-section-container{
+    display: flex;
+    margin-right: 50px;
+    align-items: center;
+    /* padding-bottom: 50px; */
+  }
+
+  .text-section{
+    margin-bottom: 50px;
+    border-left: none;
+    padding-left: 0rem;
+    /* margin-right: 50px; */
+  }
+
+  .upcoming-event{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    padding: 20px;
+  }
+
+  .event-info{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .event-title{
+    margin-right: 70px;
+  }
+
+  .event-poster{
+    width: auto;
+    max-width: 320px;
+    height: 15%;
+    align-items: center;
+    margin-right: 50px;
+  }
+
+  .event-details{
+    margin-right: 320px;
+    margin-top: 5px;
+    border-left: none;
+  }
+
+  .event-details h2{
+    font-size: 70px;
+  }
+
+  .stats-container{
+    display: flex;
+    flex-direction: column;
+    margin-right: 90px;
+    margin-top: 20px;
+    gap: 30px;
+  }
+
+  .chat-with-us{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .cwu-logo{
+    margin-right: 200px;
+    margin-top: 20px;
+  }
+
+  .social-icons{
+    margin-right: 30px;
+  }
+
+  .chat-form{
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+    max-width: 200px;
+  }
+
+  .form-group-horizontal{
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+  }
+
+  #firstName{
+    width: 300px;
+  }
+
+  #lastName{
+    width: 300px;
+  }
+
+  #email{
+    width: 300px;
+  }
+
+  #message{
+    width: 310px;
+  }
+
+  .chat-submit-btn{
+    width: 315px;
+  }
+
+  .chat-title{
+    margin-right: 70px;
+  }
+  .chat-title h3{
+    font-size: 30px;
+    font-weight: 800;
+    width: 170%;
+    margin-left: 50px;
   }
 }
