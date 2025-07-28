@@ -1,7 +1,16 @@
 import React, {useState, useEffect} from "react";
+import {LazyLoadImage} from 'react-lazy-load-image-component';
+import {Link} from "react-router-dom";
 import {motion} from "framer-motion";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 import "./Home.css"; 
-import homeImage from '../assets/IMG_0178.JPG';
+import img1 from '../assets/IMG_0178.JPG';
+import img2 from '../assets/IMG_0077.JPG'
+import img3 from '../assets/IMG_0081 (1).JPG'
 import eventPoster from '../assets/Euphoria-Bevan.jpg';
 import logo from '../assets/Black_PNG-c6d0ce6.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -10,7 +19,7 @@ import {faInstagram, faFacebook, faXTwitter, faTiktok, faLinkedin} from '@fortaw
 
 
 const Home = () => {
-    const eventDate = new Date("2025-02-18T00:00:00");
+    const eventDate = new Date("2025-04-18T00:00:00");
     const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
     const [formData, setFormData] = useState({
         name:"",
@@ -69,6 +78,21 @@ const Home = () => {
 
         return () => clearInterval(interval);
     }, []);
+    const homeImages = [
+        img1,
+        img2,
+        img3,
+    ];
+
+    const LazyImage = ({ src, alt, className, placeholderSrc }) => (
+        <LazyLoadImage
+          src={src}
+          alt={alt}
+          className={className}
+          effect="blur"
+          placeholderSrc={placeholderSrc}
+        />
+      );
 
    return( 
 <div className="home-container flex flex-col items-center px-4 sm:px-6 md:px-8">
@@ -78,7 +102,6 @@ const Home = () => {
     className="text-section text-center sm:text-left w-full max-w-lg"
     initial={{opacity: 0, y: 50}}
      whileInView={{ opacity: 1, y: 0 }} // Fades in and moves up when in view
-    //  animate={{opacity: 1, y: 0}}
      viewport={{ once: true, amount: 0.2 }} // Triggers once when 20% is visible
      transition={{duration: 1, ease: "easeOut" }}
      >
@@ -87,19 +110,40 @@ const Home = () => {
     <p className="text-gray-600 text-sm sm:text-base">
         Where Bold Ideas Meet <br />Exceptional Experiences
     </p>    
-    <button className="view-gallery-btn mt-4 px-6 py-2 bg-blue-600 text-white rounded-lg">View Gallery</button>
+    <Link to="/gallery"><button className="view-gallery-btn mt-4 px-6 py-2 bg-blue-600 text-white rounded-lg">View Gallery</button></Link>
      </motion.div>   
      <motion.div 
     className="polaroid w-full max-w-xs sm:max-w-sm md:max-w-md"
     initial={{ opacity: 0, scale: 0.8, rotate: 0 }}
      whileInView={{ opacity: 1, scale: 1, rotate: -5 }} // Expands and rotates to normal when in view
      viewport={{ once: true, amount: 0.3 }} // Triggers once when 30% is visible
-    //  animate={{ opacity: 1, scale: 1, rotate: -5 }}
      whileHover={{ rotate: 5, scale: 1.05 }} 
      transition={{ duration: 1.3 }}
-
      >
-    <img src={homeImage} alt="Home Image" className="home-image w-full rounded-lg shadow-lg" />
+        <Swiper
+        modules={[Navigation, Pagination, Autoplay]}
+        spaceBetween={10}
+        slidesPerView={1}
+        navigation
+        pagination={{ clickable: true }}
+        autoplay={{ delay: 3000 }}
+        loop
+        className="swiper"
+      >
+        {homeImages.map((image, index) => (
+          <SwiperSlide key={index}>
+            <Link to="/gallery">
+              <LazyLoadImage
+                src={image}
+                alt={`Slide ${index + 1}`}
+                className="home-image w-full rounded-lg shadow-lg"
+              />
+            </Link>
+          </SwiperSlide>
+        ))}
+      </Swiper>
+
+    {/* <Link to="/gallery"><img src={homeImage} alt="Home Image" className="home-image w-full rounded-lg shadow-lg" /></Link> */}
     <div className="caption text-center text-sm font-semibold mt-2">#TFTD2023</div>
   </motion.div>         
   </div>
@@ -120,6 +164,7 @@ const Home = () => {
     <motion.img 
     src={eventPoster}
     alt="Event Poster"
+    placeholderSrc="tiny-blur.jpg"
     className="event-poster w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg rounded-lg shadow-lg" 
     initial={{ opacity: 0, x: -50 }} 
     whileInView={{ opacity: 1, x: 0 }} 
@@ -225,6 +270,7 @@ const Home = () => {
                     <motion.form 
                     onSubmit={handleSubmit}
                     className="chat-form"
+                    id="chat-with-us"
                     initial={{ opacity: 0, y: 50 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 1 }}
