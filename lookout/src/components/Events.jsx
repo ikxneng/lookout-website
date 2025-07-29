@@ -4,6 +4,7 @@ import { motion, useInView } from "framer-motion";
 import imageFour from "../assets/IMG_5222 (1).JPG";
 import img3 from "../assets/Sip and Paint.JPG";
 import img4 from '../assets/IMG_0168.JPG';
+import img5 from '../assets/IMG_5220 (1).JPG';
 
 const events = [
   {
@@ -23,6 +24,12 @@ const events = [
     title: "Tales From The Dead",
     description: "Our annual Halloween event that first came to life in 2021, marking the beginning of our journey. A night where eerie stories unfold, the supernatural feels closer than ever, and guests immerse themselves in a world of mystery, fright, and thrill. Expect hauntingly good entertainment, spine-chilling surprises, and an atmosphere that lingers long after the night is over. If you love all things spooky, this is the one event you don’t want to miss.",
     image: img4
+  },
+
+  { id: 4,
+    title: "& Many More", 
+    description: "We promise that the magic doesn’t stop here. From pop-ups and themed nights to unexpected experiences that spark joy and curiosity, we’re always dreaming up something new. Stay tuned—you never know what’s coming next, but you can bet it’ll be unforgettable.",
+    image: img5
   }
 ];
 
@@ -61,4 +68,3 @@ const Events = () => {
 };
 
 export default Events;
- 
