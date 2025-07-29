@@ -50,7 +50,7 @@
   font-family: Georgia, 'Times New Roman', Times, serif;
   font-weight: bold;
   text-align: left;
-  color: #1f2937;
+  color: black;
 }
 
 .events-description {
@@ -61,4 +61,25 @@
   text-align: left;
   margin-top: 0.5rem;
 }
- 
+
+@media (max-width: 480px){
+
+  .events-grid{
+    max-width: 75rem;
+  }
+
+  .events-card{
+    max-width: 400px;
+    margin-right: 85px;
+  }
+
+  .events-image{
+    max-width: 350px;
+    width: auto;
+    height: 200px;
+  }
+
+  .events-title{
+    font-size: 35px;
+  }
+}
