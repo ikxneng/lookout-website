@@ -31,6 +31,22 @@
     font-size: 18px;
   }
 
+  .who-are-we{
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    align-items: center;
+  }
+
+  .who-are-we p{
+    text-align: left;
+  }
+
+  .who-are-we img{
+    width: 47%;
+    height: auto;
+  }
+
   .why-us{
     margin-top: 80px;
   }
@@ -196,4 +212,49 @@
 
 .contact-card:hover{
   transform: scale(1.08);
+}
+
+@media (max-width: 480px){
+  .about-us-title{
+    font-size: 50px;
+  }
+
+  .who-are-we{
+    display: flex;
+    flex-direction: column;
+  }
+
+  #about-img{
+    max-width: 350px;
+    width: auto;
+    height: auto;
+  }
+
+  .why-us h2{
+    font-size: 35px;
+  }
+
+  .card-image{
+    width: 100%;
+  }  
+
+  .why-us-card{
+    width: 190%;
+    padding: 10px;
+  }
+
+  .meet-the-team h2{
+    font-size: 40px;
+    margin-left: 30px;
+  }
+
+  .contact-info{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .contact-card{
+    width: 250px;
+    margin-left: 20px;
+  }
 }
