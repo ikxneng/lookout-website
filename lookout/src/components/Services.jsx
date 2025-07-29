@@ -59,7 +59,7 @@ const Services = () => {
           whileInView={{ scale: 1, opacity: 1 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
           >
-            <img src={service.image} alt={service.name} />
+            <img className="service-img" src={service.image} alt={service.name} />
           </motion.div>
 
           {/* Description Section */}
